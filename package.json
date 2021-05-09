@@ -2,10 +2,10 @@
     "name": "node-heroku-server",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js"
+        "start": "tsc && node build/server.js"
     },
     "repository": {
         "type": "git",
@@ -16,5 +16,19 @@
     "bugs": {
         "url": "https://github.com/gigabytejayesh/Node-Heroku-Server/issues"
     },
-    "homepage": "https://github.com/gigabytejayesh/Node-Heroku-Server#readme"
+    "homepage": "https://github.com/gigabytejayesh/Node-Heroku-Server#readme",
+    "devDependencies": {
+        "@types/hapi__glue": "^6.1.3",
+        "@types/hapi__hapi": "^20.0.8",
+        "@types/node": "^15.0.2",
+        "typescript": "^4.2.4"
+    },
+    "dependencies": {
+        "@hapi/glue": "^8.0.0",
+        "@hapi/hapi": "^20.1.2",
+        "@hapi/inert": "^6.0.3",
+        "@hapi/vision": "^6.0.1",
+        "config": "^3.3.3",
+        "graceful-fs": "^4.2.5"
+    }
 }
