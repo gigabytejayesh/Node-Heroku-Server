@@ -1,4 +1,5 @@
 const Config = require("config");
+require("dotenv").config();
 const Package = require("../package.json");
 import { compose } from "@hapi/glue";
 import * as Hapi from "@hapi/hapi";
