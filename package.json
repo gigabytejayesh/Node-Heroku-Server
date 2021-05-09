@@ -1,0 +1,19 @@
+{
+  "name": "node-heroku-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gigabytejayesh/Node-Heroku-Server.git"
+  },
+  "author": "SMARTHM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gigabytejayesh/Node-Heroku-Server/issues"
+  },
+  "homepage": "https://github.com/gigabytejayesh/Node-Heroku-Server#readme"
+}
