@@ -3,7 +3,7 @@ const Config = require("config");
 export = {
     server: {
         // host: process.env.HOST || process.env.host || "smart-hm.herokuapp.com",
-        port: process.env.PORT || 80,
+        port: process.env.PORT,
         // host: "localhost",
         // port: 8080,
     },
