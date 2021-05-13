@@ -17,8 +17,8 @@ export class APIService {
                 console.log(error);
                 return "Failed to Import Database Schema";
             }
-            return "Database Schema Imported";
         }
+        return "Database Schema Imported";
     }
 
     public async createObject(objectClass: string, objectData: any) {
