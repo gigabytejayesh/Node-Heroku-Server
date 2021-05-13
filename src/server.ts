@@ -3,6 +3,7 @@ require("dotenv").config();
 const Package = require("../package.json");
 import { compose } from "@hapi/glue";
 import * as Hapi from "@hapi/hapi";
+import { Database } from "./libraries/database/database";
 
 export class Server {
     public async startHapiServer() {
@@ -35,7 +36,7 @@ export class Server {
 
     public async start() {
         try {
-            // await this.connectToDB();
+            await this.connectToDB();
             return await this.startHapiServer();
         } catch (error) {
             console.log(error);
@@ -44,12 +45,13 @@ export class Server {
     }
 
     private async connectToDB() {
-        // let dbConfiguration = {
-        //     name: Config.DB_NAME,
-        //     host: Config.DB_HOST, // server name or IP address;
-        //     port: Config.DB_PORT,
-        // };
-        // await Database.Instance.configure(dbConfiguration);
+        let dbConfiguration = {
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false,
+            },
+        };
+        await Database.Instance.configure(dbConfiguration);
     }
 
     private logServerDetails(server: Hapi.Server) {

@@ -12,7 +12,7 @@ export = {
             "@hapi/inert",
             "@hapi/vision",
             {
-                plugin: "./build/plugins/API/plugin",
+                plugin: "./build/plugins/ModulesAccess/plugin",
             },
         ],
     },
