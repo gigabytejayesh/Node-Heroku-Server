@@ -9,7 +9,7 @@ export class APIController {
         return {
             handler: (request: Hapi.Request, h: any) => {
                 // return "Hello Forks, Welcome to SmartHM server";
-                return h.file("./public/static/index.html");
+                return h.file("./public/index.html");
             },
         };
     }
