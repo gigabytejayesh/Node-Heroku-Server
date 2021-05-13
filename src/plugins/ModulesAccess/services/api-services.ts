@@ -13,11 +13,11 @@ export class APIService {
         for (const iterator of schema) {
             try {
                 await Database.Instance.DB.query(iterator);
-                return "Database Schema Imported";
             } catch (error) {
                 console.log(error);
                 return "Failed to Import Database Schema";
             }
+            return "Database Schema Imported";
         }
     }
 
