@@ -7,8 +7,9 @@ export class APIController {
 
     public getAPIData(): Hapi.RouteOptions {
         return {
-            handler: (request: Hapi.Request, h: Hapi.ResponseToolkit) => {
-                return "Hello Forks, Welcome to SmartHM server";
+            handler: (request: Hapi.Request, h: any) => {
+                // return "Hello Forks, Welcome to SmartHM server";
+                return h.file("./public/static/index.html");
             },
         };
     }
