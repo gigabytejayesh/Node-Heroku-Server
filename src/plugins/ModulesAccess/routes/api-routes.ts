@@ -15,25 +15,25 @@ export default function (server: any) {
 
     server.route({
         method: "GET",
-        path: "/import",
+        path: "/api/import",
         options: apiController.importSchema(),
     });
 
     server.route({
         method: "POST",
-        path: "/{objectClass}",
+        path: "/api/{objectClass}",
         options: apiController.createObject(),
     });
 
     server.route({
         method: "PUT",
-        path: "/{objectClass}/{objectID}",
+        path: "/api/{objectClass}/{objectID}",
         options: apiController.updateObjectByID(),
     });
 
     server.route({
         method: "GET",
-        path: "/{objectClass}/{objectID}",
+        path: "/api/{objectClass}/{objectID}",
         options: apiController.getObjectByID(),
     });
 }
