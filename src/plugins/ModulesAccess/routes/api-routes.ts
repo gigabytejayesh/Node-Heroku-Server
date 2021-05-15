@@ -3,10 +3,23 @@ import { APIController } from "../controller/api-controller";
 export default function (server: any) {
     let apiController = new APIController();
 
+    // server.views({
+    //     engines: {
+    //         html: require("handlpoebars"),
+    //     },
+    //     relativeTo: __dirname,
+    //     path: "../../../../public",
+    // });
+
     server.route({
         method: "GET",
-        path: "/",
-        options: apiController.getAPIData(),
+        path: "/{file*}",
+        handler: {
+            directory: {
+                path: "public",
+            },
+        },
+        // options: apiController.getAPIData(),
     });
 
     server.route({

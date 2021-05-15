@@ -5,14 +5,14 @@ import { APIService } from "../services/api-services";
 export class APIController {
     apiService = new APIService();
 
-    public getAPIData(): Hapi.RouteOptions {
-        return {
-            handler: (request: Hapi.Request, h: any) => {
-                // return "Hello Forks, Welcome to SmartHM server";
-                return h.file("./public/index.html");
-            },
-        };
-    }
+    // public getAPIData(): Hapi.RouteOptions {
+    //     return {
+    //         handler: (request: Hapi.Request, h: any) => {
+    //             // return "Hello Forks, Welcome to SmartHM server";
+    //             return h.file("./public/index.html");
+    //         },
+    //     };
+    // }
 
     public importSchema(): Hapi.RouteOptions {
         return {
