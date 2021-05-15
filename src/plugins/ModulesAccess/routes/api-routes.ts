@@ -3,14 +3,6 @@ import { APIController } from "../controller/api-controller";
 export default function (server: any) {
     let apiController = new APIController();
 
-    // server.views({
-    //     engines: {
-    //         html: require("handlpoebars"),
-    //     },
-    //     relativeTo: __dirname,
-    //     path: "../../../../public",
-    // });
-
     server.route({
         method: "GET",
         path: "/{file*}",
@@ -19,7 +11,6 @@ export default function (server: any) {
                 path: "public",
             },
         },
-        // options: apiController.getAPIData(),
     });
 
     server.route({
@@ -34,9 +25,15 @@ export default function (server: any) {
         options: apiController.createObject(),
     });
 
-    // server.route({
-    //     method: "PUT",
-    //     path: "/",
-    //     options: apiController.updateObjectByID(),
-    // });
+    server.route({
+        method: "PUT",
+        path: "/{objectClass}/{objectID}",
+        options: apiController.updateObjectByID(),
+    });
+
+    server.route({
+        method: "GET",
+        path: "/{objectClass}/{objectID}",
+        options: apiController.getObjectByID(),
+    });
 }

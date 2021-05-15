@@ -28,4 +28,32 @@ export class APIService {
         );
         return result;
     }
+
+    public async updateObjectByID(
+        objectClass: string,
+        objectID: string,
+        dataToUpdate: any
+    ) {
+        let isExist = await this.dataAccess.getObjectByID(
+            objectClass,
+            objectID
+        );
+        if (!isExist) {
+            throw new Error(`Object does not exists for object ID ${objectID}`);
+        }
+        let updatedObject = await this.dataAccess.updateObjectByID(
+            objectClass,
+            objectID,
+            dataToUpdate
+        );
+        return updatedObject;
+    }
+
+    public async getObjectByID(objectClass: string, objectID: string) {
+        let result = await this.dataAccess.getObjectByID(objectClass, objectID);
+        if (!result) {
+            throw new Error(`Object does not exists for object ID ${objectID}`);
+        }
+        return result;
+    }
 }
